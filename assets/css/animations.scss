@@ -1,0 +1,155 @@
+/* Zoom image personnage à l'arrivée sur la page*/
+@keyframes zoomAccueil
+{ from{
+    height: 60vh;
+    width: auto;
+    opacity: 0.5;
+  }
+
+  to{
+    height: 73vh;
+    width: auto;
+    opacity: 1;
+  }
+}
+// Bouton burger
+body {
+  position: relative;
+}
+
+#menu-burger {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  position: fixed;
+  top: 16px;
+  right: 5%;
+  cursor: pointer;
+  z-index: 200;
+}
+
+#menu-burger .menu-icon {
+  display: block;
+  height: 2px;
+  width: 18px;
+  background: #0c3967;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -9px;
+  margin-top: -1px;
+}
+
+#menu-burger .menu-icon:after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 18px;
+  background: #0c3967;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -9px;
+  margin-top: -5px;
+  transition: 0.35s;
+}
+
+#menu-burger .menu-icon:before {
+  content: ' ';
+  display: block;
+  height: 2px;
+  width: 18px;
+  background: #0c3967;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -9px;
+  margin-top: 4px;
+    transition: 0.35s;
+}
+
+#menu-burger .menu-icon.open:before{
+  transform: rotate(45deg);
+  margin-top: -1px;
+  background: #000;
+}
+
+#menu-burger .menu-icon.open:after{
+  transform: rotate(-45deg);
+  margin-top: -1px;
+  background: #000;
+}
+
+#menu-burger.open {
+  background: #fff;
+}
+
+#menu-burger .menu-icon.open {
+  background: #fff;
+}
+
+#overlay-menu {
+  position: fixed;
+  background: #000;
+  height: 100%;
+  width: 100%;
+  opacity: 0.85;
+  z-index: 100;
+  right: -100%;
+  transition: 0.35s;
+}
+
+#overlay-menu.open {
+  right: 0%;
+}
+
+#overlay-menu nav {
+  height: 60%;
+  position: relative;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 32px;
+  text-align: center;
+}
+
+#overlay-menu nav ul {
+  display: inline-block;
+  margin: auto;
+  height: 100%;
+}
+
+#overlay-menu nav ul li {
+  position: relative;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+#overlay-menu nav ul li a {
+  color: #fff;
+}
+
+#overlay-menu nav ul li a:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: #fff;
+  transition: 0.25s;
+}
+
+#overlay-menu nav ul li a:hover:after {
+  width: 100%;
+}
+
+body {
+  background: #FFD000;
+  height: 100%;
+}
+*::selection {
+  background: #fff;
+}
